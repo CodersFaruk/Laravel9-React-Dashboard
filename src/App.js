@@ -1,16 +1,24 @@
 import "./App.css";
-import { Button } from "react-bootstrap";
 import Header from "./components/Header";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import UpdateProduct from "./components/UpdateProduct";
+import AddProduct from "./components/AddProduct";
+import Registraion from "./components/Registraion";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <Router>
         <Header />
-        <Button variant="primary">Primary</Button>
-        <button>genaral</button>
-      </BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Registraion/>} />
+          <Route path="/addProduct" element={<AddProduct/>} />
+          <Route path="/updatePorduct" element={<UpdateProduct/>} />
+          <Route path="/login" element={<Login/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
